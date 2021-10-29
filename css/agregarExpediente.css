@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@500&family=Ubuntu:wght@500&display=swap');
+
+html{
+    padding: 0%;
+    margin: 0%;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.fondo{
+    position: absolute;
+    width: 100%;
+    height: 700px;
+}
+
+#capa{
+    position: absolute;
+    width: 100%;
+    height: 873px;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+#tarjeta{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+
+    background: #F9F9F9;
+    border-radius: 18px;
+}
+
+#regresar{
+    position: absolute;
+    width: 20%;
+    height: 37px;
+    margin-left: 40%;
+    margin-top: 5%;
+    padding-top: 1%;
+    background: #FBFF37;
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #000000;
+    border: none;
+    text-decoration: none;
+}
+
+#expediente{
+    width: 84%;
+    height: 76%;
+    margin-left: 8%;
+    margin-top: 6%;
+    border-style: dotted;
+}
+
+#titulo{
+    position: absolute;
+    width: 50%;
+    margin-top: 17%;
+    margin-left: 16.5%;
+
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 86px;
+    text-align: center;
+
+    color: #4e4e4e;
+}
+
+.drag-area{
+    width: 84%;
+    height: 76%;
+    margin-left: 8%;
+    margin-top: 6%;
+    border-style: dotted;
+}
+
+.drag-area.active{
+    background: rgb(197, 241, 255);
+    color: #000000;
+    opacity: 90%;
+
+}
+
+#boton{
+
+    position: absolute;
+    width: 30%;
+    height: 30px;
+    margin-left: -27.7%;
+    margin-top: 26%;
+    cursor: pointer;
+
+    background: #FBFF37;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    
+    color: #000000;
+}
+
+
+img{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+
+.file-container{
+    background-color: white;
+    width: 50%;
+    margin-left: 25%;
+}

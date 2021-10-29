@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;500&family=Ubuntu:wght@500;700&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+#fondo{
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    margin-left: 56.5%;
+}
+
+#doctora{
+    position: absolute;
+    height: 54%;
+    margin-top: 26.4%;
+    margin-left: 28%;
+}
+
+#doctor{
+    position: absolute;
+    height: 54%;
+    margin-top: 26.4%;
+    margin-left: 6%;
+}
+
+#regis{
+    position: absolute;
+    width: 23%;
+    margin-top: 6%;
+    margin-left: 6%;
+}
+
+#whealthy{
+    position: absolute;
+    width: 40%;
+    margin-top: 12%;
+    margin-left: 6%;
+}
+
+.ct{
+    position: absolute;
+    width: 70%;
+    height: 6.5%;
+    margin-left: 15%;
+    margin-top: 12%;
+    padding-left: 4%;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #000000;
+}
+
+::placeholder{
+    color: #B8B8B8; 
+}
+
+#ct2{
+    margin-top: 25%;
+}
+#ct3{
+    margin-top: 3%;
+}
+#ct4{
+    margin-top: 16%;
+}
+
+#dp{
+    width: 196px;
+    height: 28px;
+    left: 700px;
+    top: 253px;
+    margin-top: 38%;
+    margin-left: 15%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #FFFFFF;
+}
+
+#text-s{
+    position: absolute;
+    width: 43.5%;
+    height: 100%;
+    margin-left: 56.5%;
+}
+
+.ctp{
+    width: 34%;
+    height: 6.5%;
+    padding-left: 4%;
+    margin-top: 29%;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #000000;
+}
+
+#ctp_1{
+    margin-left: 15%;
+    margin-right: 1.5%;
+}
+
+.links{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #DCDCDC;
+    text-decoration: none;
+}
+
+#links-1{
+    margin-left: 22%;
+    top: 40px;
+}
+
+#links-2{
+    margin-left: 8%;
+    margin-top: 40%;
+}
+
+#texto{
+    width: 70%;
+    margin-left: 15%;
+    display: block;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 22px;
+
+    color: #FFFFFF;
+}
+
+#check-box{
+    width: 10px;
+    margin-left: 10%;
+}
+
+#Registro{
+    position: absolute;
+    width: 32%;
+    height: 47px;
+    margin-left: 34%;
+    margin-top: 6.5%;
+    border: none;
+
+
+    background: #FBFF37;
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#strong{
+    margin-left: 2%;
+    font-family: Ubuntu;
+}
+
+#alerta{
+    width: 100%;
+    color: red;
+}
+
+#close-1{
+    margin-left: 55%;
+}
+
+#close-3{
+    margin-left: 70%;
+}
+
+
+#close-2{
+    margin-left: 70%;
+}
+
+#close-4{
+    margin-left: 60%;
+}
+
+#close-5{
+    margin-left: 70%;
+}
+
+#close-6{
+    margin-left: 66%;
+}
+
+#close-7{
+    margin-left: 66%;
+}
+
+#container-alerts{
+    margin-bottom: 45%;
+}
+
+#body{
+    background-color: white;
+}
