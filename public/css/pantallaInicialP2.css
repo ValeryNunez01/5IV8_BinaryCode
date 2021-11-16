@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;500&family=Ubuntu:wght@500;700&display=swap');
+
+#nombre-usuariop, #correo-usuariop, #contrasena-usuariop{
+
+    height: 47px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+
+    color: #000000;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+}
+
+::placeholder{
+    color: #B8B8B8; 
+}
+
+
+#label-1, #label-2, #label-3{
+    margin-top: 10%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.74);
+
+}
+
+#cerrar-sesion{
+    position: absolute;
+    width: 13%;
+    height: 47px;
+    margin-top: 3%;
+    margin-left: 72%;
+
+    background: #D60000;
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    border: none;
+}
+
+#menu{
+    position: absolute;
+    width: 3%;
+    height: 47px;
+    margin-top: 3%;
+    margin-left: 87.5%;
+
+    background: #FFCDBD;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #000000;
+    border: none;
+}
+
+
+#menu-2{
+    position: absolute;
+    width: 34px;
+    height: 28px;
+    margin-top: 2%;
+    margin-left: 40%;
+
+    background-color: white;
+    border: none;
+    
+    font-size: 25px;
+    line-height: 47px;
+
+    color: #000000;
+}
+
+#tache{
+    position: absolute;
+    width: 25px;
+    height: 29px;
+    left: 35px;
+    margin-top: 5%;;
+
+    font-size: 25px;
+    line-height: 29px;
+    
+    border: none;
+    color: rgba(255, 0, 0, 0.75);
+
+}
+
+#enviar{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    margin-left: 90%;
+    margin-top: 649px;
+
+    font-size: 22px;
+    line-height: 25px;
+
+    border: none;
+
+}
+
+
+#strong{
+    margin-left: 2%;
+    font-family: Ubuntu;
+}
+
+#alerta{
+    width: 100%;
+    color: red;
+}
+
+#close-1{
+    margin-left: 55%;
+}
+
+#close-3{
+    margin-left: 70%;
+}
+
+
+#close-2{
+    margin-left: 70%;
+}
+
+#close-4{
+    margin-left: 60%;
+}
+
+
+#body{
+    background-color: white;
+}

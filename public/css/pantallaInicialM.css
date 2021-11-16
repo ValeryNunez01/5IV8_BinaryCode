@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Ubuntu:wght@500&display=swap');
+@import url('./pantallaInicialP2.css');
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    background: #FFF8F9;
+}
+
+#ondas{
+    position: absolute;
+    width: 100%;
+    margin-top: 491px
+}
+
+#gato{
+    position: absolute;
+    width: 375px;
+    height: 360px;
+    margin-left: 65%;
+    margin-top: 9%;
+}
+
+#foto{
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    margin-top: 5%;
+    margin-left: 9%;
+}
+
+#nombre-usuario{
+    position: absolute;
+    width: 750px;
+    height: 68px;
+    margin-left: 23%;
+    margin-top: 8%;
+    border: none;
+
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 68px;
+
+    color: rgba(0, 0, 0, 0.75);
+
+}
+
+#editar-perfil{
+
+    position: absolute;
+    border: none;
+    width: 11%;
+    height: 5%;
+    margin-left: 23%;
+    margin-top: 13.5%;
+
+    background: #FFF500;
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#tarjeta{
+    position: absolute;
+    width: 34%;
+    height: 45%;
+    margin-left: 9%;
+    margin-top: 25%;
+    text-align:center;
+
+    background: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+#tarjeta-2{
+    position: absolute;
+    width: 34%;
+    height: 45%;
+    margin-left: 57%;
+    margin-top: 25%;
+
+    background: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+#foto-medico{
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 108px;
+    height: 108px;
+}
+
+#nombre-medico{
+    width: 90%;
+    height: 32px;
+    text-align: center;
+    margin-top: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 37px;
+    border: none;
+
+    color: #000000;
+    background-color: white;
+}
+
+#prueba{
+    position: absolute;
+    background-color: white;
+    margin-left: 0%;
+    margin: 0%;
+    width: 44%;
+    height: 50%;
+    margin-right: 2%;
+}
+
+#prueba-2{
+    position: absolute;
+    background-color: white;
+    margin-left: 54%;
+    width: 46%;
+    height: 50%;
+}
+
+#chat{
+    position: relative;
+    width: 58%;
+    height: 21%;
+    text-align: center;
+    margin-left: 42%;
+    margin-top: 16%;
+
+    background: #FFFFFF;
+    border: 3px solid #51D400;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #51D400;
+}
+
+#cancelar-cita{
+    width: 58%;
+    height: 21%;
+    text-align: center;
+    margin-left: 42%;
+    margin-top: 12%;
+
+    background: #FFFFFF;
+    border: 3px solid #FF1414;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #FF0000;
+}
+
+#horario{
+    width: 90%;
+    height: 21%;
+    margin-left: 0%;
+    margin-right: 10%;
+    margin-top: 16%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+#fecha{
+    width: 90%;
+    height: 21%;
+    margin-left: 0%;
+    margin-right: 10%;
+    margin-top: 12%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+#videollamar{
+    position: relative;
+    width: 33%;
+    height: 38px;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    margin-top: 35%;
+
+    background: #46C8FF;
+    border: 2px solid #46C8FF;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+}
+
+.contenedor-campos{
+    width: 92%;
+    margin-left: 4%;
+}
+
+#offcanvasRightLabel{
+    margin-left: 4%;
+    margin-top: 3%;
+    font-size: 25px;
+}
+
+#tache-2{
+    margin-right: 4%;
+    margin-top: 3%;
+}
+
+#boton-actualizar{
+    width: 50%;
+    height: 38px;
+    margin-left: 25%;
+    margin-top: 14%;
+    background: #FBFF37;
+    border: none;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+#mensaje-usuariop{
+    position: absolute;
+    width: 80%;
+    margin-left: 3%;
+    margin-right: 10%;
+    margin-top: 645px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+#cerrar-sesion{
+    margin-left: 78%;
+}
+
+#close-1{
+    margin-left: 55%;
+}
+
+#close-3{
+    margin-left: 70%;
+}
+
+
+#close-2{
+    margin-left: 70%;
+}
+
+#close-4{
+    margin-left: 60%;
+}
+
+#container-alerts{
+    margin-bottom: 5%;
+}
+

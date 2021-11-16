@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/pantallaInicialM.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <title>Whealthy</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/4782e58f3d.js" crossorigin="anonymous"></script>
+
+    <img id="ondas" src="./img/Vector 6.svg">
+
+    <div>
+        <div id="foto"></div>
+        <input id="nombre-usuario" type="text" value="Alexander Fleming">
+        <button  id="editar-perfil" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar perfil</button>
+        <button id="cerrar-sesion">Cerrar Sesión</button>
+     
+    
+    <div id="tarjeta">
+        <button class="fas fa-times-circle" id="tache"></button>
+        <div class="dropdown">
+            <button class="btn btn-secondary fas fa-ellipsis-v" type="button" id="menu-2" data-bs-toggle="dropdown"></button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="editarReceta.html">Receta médica</a></li>
+              <li><a class="dropdown-item" href="agregarExpediente.html">Expediente</a></li>
+            </ul>
+        </div>
+        <div id="foto-medico"></div>
+        <input id="nombre-medico" type="text" value="Paciente Valery Núñez">
+        <div id="prueba">
+            <button id="chat"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Chat
+            </button>
+            <input type="button" id="cancelar-cita" value="Cancelar cita">
+        </div>
+
+        <div id="prueba-2">
+            <input id="horario" value="Horario 19:00">
+            <input id="fecha" value="Fecha 24 de Diciembre">
+        </div>
+        <input id="videollamar" type="button" value="Videollamar">
+        
+    </div>
+
+<!-- CHAT -->
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Mensajería</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            
+            <div class="dropdown mt-3">
+                <input type="text" class="form-control campo-mensajeria" id="mensaje-usuariop">
+                <button id="enviar" class="far fa-paper-plane"></button>
+            </div>
+        </div>
+    </div>
+
+<!-- EDITAR DATOS -->
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Editar perfil</h5>
+        <button type="button" id="tache-2" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+        <div class="contenedor-campos">
+            <form onsubmit="return validacionInicioPaciente();">
+
+            <label for="nombre-usuariop" class="form-label label-editable" id="label-1">Nombre de usuario</label>
+            <input type="text" class="form-control" id="nombre-usuariop">
+
+            <label for="contrasena-usuariop" class="form-label label-editable" id="label-2">Contraseña</label>
+            <input type="text" class="form-control" id="contrasena-usuariop">
+
+            <label for="correo-usuariop" class="form-label label-editable" id="label-3">Correo</label>
+            <input type="text" class="form-control" id="correo-usuariop">
+
+            <button type="submit" class="btn btn-primary" id="boton-actualizar">Actualizar datos</button>
+        </form>
+
+        <div class="position-fixed bottom-0 end-0 p-3 " id="container-alerts" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header fas fa-exclamation-circle" id="alerta">
+                <strong class="me-auto" id="strong"> Campos vacíos</strong>
+        
+                <button type="button" id="close-1" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="body">
+                Favor de llenar todos los campos.
+            </div>
+            </div>
+        </div>
+    
+    
+        <div class="position-fixed bottom-0 end-0 p-3 " id="container-alerts" style="z-index: 11">
+            <div id="Correo" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header fas fa-exclamation-circle" id="alerta">
+                <strong class="me-auto" id="strong"> Correo</strong>
+        
+                <button type="button" id="close-2" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="body">
+                Correo inválido, inténtelo de nuevo.
+            </div>
+            </div>
+        </div>
+    
+        <div class="position-fixed bottom-0 end-0 p-3 " id="container-alerts" style="z-index: 11">
+            <div id="Usuario" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header fas fa-exclamation-circle" id="alerta">
+                <strong class="me-auto" id="strong"> Usuario</strong>
+        
+                <button type="button" id="close-3" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="body">
+                Usuario existente, inténtelo de nuevo.
+            </div>
+            </div>
+        </div>
+    
+        <div class="position-fixed bottom-0 end-0 p-3 " id="container-alerts" style="z-index: 11">
+            <div id="Contrasena" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header fas fa-exclamation-circle" id="alerta">
+                <strong class="me-auto" id="strong"> Contraseña</strong>
+        
+                <button type="button" id="close-4" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="body">
+                Su contraseña debe incluir al menos una mayúscula, minúscula, caracter especial, un número y longitud no menor a 8.
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    
+    </div>
+
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="./js/validacionIS.js"></script>
+      <script src="./js/disabled.js"></script>
+</body>
+</html>
