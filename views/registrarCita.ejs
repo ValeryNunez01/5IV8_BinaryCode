@@ -22,16 +22,25 @@
     </div>
 
     <div id="tarjeta">
-        <p id="titulo">REGISTRO DE CITA</p>
-        <p><input type="date" class="campos" id="fecha" placeholder="Fecha"></p>
-        <p><input type="time" class="campos" id="hora" placeholder="Hora"></p>
-        <select id="selector" class="campos">
-            <option>Femenino</option>
-            <option>Masculino</option>
-        </select>
+        <form action="/buscarMedico" method="post">
+            <p id="titulo">REGISTRO DE CITA</p>
+            <p><input name="FechaCit" type="date" class="campos" id="fecha" placeholder="Fecha"></p>
+            <p>
+                <select name="HoraCit" class="campos" id="hora">
+                    <% for(let i=6;i<=21;i += 1) {%> 
+                        <option value="<%= i %>:00"><%= i %>:00</option>
+                        <option value="<%= i %>:30"><%= i %>:30</option>
+                    <% } %> 
+                </select>
+            </p>
+            <select name="SexoMed" id="selector" class="campos">
+                <option>Femenino</option>
+                <option>Masculino</option>
+            </select>
 
-        <a id="regresar-de-registrar" href="pantallaInicialP.html">Cancelar</a>
-        <a id="busqueda" href="buscarMedico.html">Buscar</a>
+            <a id="regresar-de-registrar" href="/pantallaInicial">Cancelar</a>
+            <button type="submit"><a id="busqueda">Buscar</a></button>
+        </form>
     </div>
 </body>
 </html>

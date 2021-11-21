@@ -16,11 +16,12 @@
 
     <div>
         <div id="foto"></div>
-        <input id="nombre-usuario" type="text" value="Alexander Fleming">
+        <input id="nombre-usuario" type="text" value="<%= MUsuario.NomUsu %>" readonly>
         <button  id="editar-perfil" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar perfil</button>
-        <button id="cerrar-sesion">Cerrar Sesión</button>
-     
-    
+        <form action="/cerrarSesion" method="get">
+            <button type="submit" id="cerrar-sesion">Cerrar Sesión</button>
+        </form>
+    </div>
     <div id="tarjeta">
         <button class="fas fa-times-circle" id="tache"></button>
         <div class="dropdown">
@@ -74,16 +75,16 @@
     <div class="offcanvas-body">
 
         <div class="contenedor-campos">
-            <form onsubmit="return validacionInicioPaciente();">
+            <form onsubmit="return validacionInicioPaciente();" action="/actualizarUsu" method="post">
 
             <label for="nombre-usuariop" class="form-label label-editable" id="label-1">Nombre de usuario</label>
-            <input type="text" class="form-control" id="nombre-usuariop">
+            <input name="NomUsu" type="text" class="form-control" id="nombre-usuariop" value="<%= MUsuario.NomUsu %>">
 
             <label for="contrasena-usuariop" class="form-label label-editable" id="label-2">Contraseña</label>
-            <input type="text" class="form-control" id="contrasena-usuariop">
+            <input name="ContraUsu" type="text" class="form-control" id="contrasena-usuariop" value="<%= MUsuario.ContraUsu %>">
 
             <label for="correo-usuariop" class="form-label label-editable" id="label-3">Correo</label>
-            <input type="text" class="form-control" id="correo-usuariop">
+            <input name="CorreoUsu" type="text" class="form-control" id="correo-usuariop" value="<%= MUsuario.CorreoUsu %>">
 
             <button type="submit" class="btn btn-primary" id="boton-actualizar">Actualizar datos</button>
         </form>

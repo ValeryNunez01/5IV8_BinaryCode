@@ -16,17 +16,19 @@
 
     <div>
         <div id="foto"></div>
-        <input id="nombre-usuario" type="text" value="Valery Núñez">
+        <input id="nombre-usuario" type="text" value="<%= MUsuario.NomUsu %> " readonly>
         <button  id="editar-perfil" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar perfil</button>
-        <button id="cerrar-sesion">Cerrar Sesión</button>
+        <form action="/cerrarSesion" method="get">
+            <button type="submit" id="cerrar-sesion">Cerrar Sesión</button>
+        </form>
         <div class="dropdown">
             <button class="btn btn-secondary fas fa-bars"  type="button" id="menu" data-bs-toggle="dropdown" aria-expanded="false"></button>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="registrarCita.html">Registrar cita</a></li>
+              <li><a class="dropdown-item" href="/registrarCitaV">Registrar cita</a></li>
               <li><a class="dropdown-item" href="visualizarExpediente.html">Historial Clínico</a></li>
             </ul>
         </div>  
-    
+    </div>
     <div id="tarjeta">
         <button class="fas fa-times-circle" id="tache"></button>
         <div class="dropdown">
@@ -36,7 +38,7 @@
             </ul>
         </div>
         <div id="foto-medico"></div>
-        <input id="nombre-medico" type="text" value="Médico Alexander Fleming">
+        <input id="nombre-medico" type="text" value="Médico Alexander Fleming" readonly>
         <div id="prueba">
             <button id="chat"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 Chat
@@ -79,22 +81,23 @@
     <div class="offcanvas-body">
 
         <div class="contenedor-campos">
-            <form onsubmit="return validacionInicioPaciente();">
+            <form onsubmit="return validacionInicioPaciente();" action="/actualizarUsu" method="post">
 
             <label for="nombre-usuariop" class="form-label label-editable" id="label-1">Nombre de usuario</label>
-            <input type="text" class="form-control" id="nombre-usuariop">
+            <input name="NomUsu" type="text" class="form-control" id="nombre-usuariop" value="<%= MUsuario.NomUsu %>">
 
             <label for="contrasena-usuariop" class="form-label label-editable" id="label-2">Contraseña</label>
-            <input type="text" class="form-control" id="contrasena-usuariop">
+            <input name="ContraUsu" type="text" class="form-control" id="contrasena-usuariop" value="<%= MUsuario.ContraUsu %>">
 
             <label for="correo-usuariop" class="form-label label-editable" id="label-3">Correo</label>
-            <input type="text" class="form-control" id="correo-usuariop">
+            <input name="CorreoUsu" type="text" class="form-control" id="correo-usuariop" value="<%= MUsuario.CorreoUsu %>">
 
             <button type="submit" class="btn btn-primary" id="boton-actualizar">Actualizar datos</button>
         </form>
         </div>
 
     </div>
+    <div>
         <!--ALERTS-->
 
         <div class="position-fixed bottom-0 end-0 p-3 " id="container-alerts" style="z-index: 11">
@@ -151,9 +154,9 @@
         </div>
     </div>
 
-      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-      <script src="./js/validacionIS.js"></script>
-      <script src="./js/disabled.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./js/validacionIS.js"></script>
+    <script src="./js/disabled.js"></script>
 </body>
 </html>

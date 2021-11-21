@@ -1,6 +1,8 @@
+const { query } = require('express');
 const con = require('../config/conexion');
 const paciente = require('../model/paciente');
 const usuario = require("../model/usuario");
+const session = require('express-session');
 
 module.exports = {
 
@@ -17,11 +19,9 @@ module.exports = {
     },
 
     registrarPac:function(req, res, next) {
-        console.log(req.body);
+        
         usuario.buscarUsu(con, req.body, function (err, datos) {
-            if (!datos) {
-                console.log(datos);
-                console.log(err);
+            if (datos.length == 0) {
                 paciente.guardarPac(con, req.body, function (err) {
                     if(!err) {
                         console.log('Guardado paciente');
@@ -32,7 +32,6 @@ module.exports = {
                                     console.log("Guardao");
                                     res.redirect('/isPaciente');
                                 }else {
-                                    console.log(err);
                                     res.redirect('/rPaciente');
                                 }
                             });
@@ -44,6 +43,38 @@ module.exports = {
                 res.redirect('/rPaciente');
             }
         })
-    }
+    },
 
+    avisoDePrivacidad:function (req, res, next) {
+        res.render('avisoDePrivacidad');
+    },
+
+    terminosCondicionesUso:function (req, res, next) {
+        res.render('terminosCondicionesUso');
+    },
+
+    pantallaInicial:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else{
+            const MUsuario = req.session.MUsuario;
+            if(MUsuario.TipoUsu == 'p'){
+                res.render('pantallaInicialP',{
+                    MUsuario
+                });
+            }else {
+                res.render('pantallaInicialM',{
+                    MUsuario
+                });
+            }
+        }
+    },
+
+    registrarCitaV:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else{
+            res.render('registrarCita');
+        }
+    }
 }

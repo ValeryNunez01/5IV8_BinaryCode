@@ -4,5 +4,8 @@ module.exports = {
     },
     buscarUsu:function (conexion, datos, funcion) {
         conexion.query("SELECT * FROM MUsuario WHERE NomUsu = ?", [datos.NomUsu], funcion);
+    },
+    actualizarUsu:function (conexion, past, newer, funcion) {
+        conexion.query("UPDATE MUsuario SET NomUsu = ?, CorreoUsu = ?, ContraUsu = ? WHERE IdTip = ?", [newer.NomUsu, newer.CorreoUsu, newer.ContraUsu, past.IdTip], funcion);
     }
 }

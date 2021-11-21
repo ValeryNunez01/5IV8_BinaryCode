@@ -13,9 +13,9 @@
     <img id="titulo" src="./img/Iniciar Sesión con WHEALTHY.svg">
     <img id="logo" src="./img/logo_2 1.svg">
     <div id="cuadro">
-        <form onsubmit="return validar();">
-            <input class="field-text" type="text" id="field-1" placeholder="Nombre de usuario">
-            <input class="field-text" id="field-2" type="text" placeholder="Contraseña">
+        <form onsubmit="return validar();" action="/validarUsu" method="post">
+            <input name="NomUsu" class="field-text" type="text" id="field-1" placeholder="Nombre de usuario">
+            <input name="ContraUsu" class="field-text" id="field-2" type="password" placeholder="Contraseña">
         
             <div id="link-registro">
                 <span id="link-1">¿NO TIENES CUENTA?</span>
