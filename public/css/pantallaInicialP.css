@@ -13,10 +13,14 @@
     background: #FFF8F9;
 }
 
+body {
+    background-color: #FFF8F9;
+}
+
 #ondas{
     position: absolute;
     width: 100%;
-    margin-top: 491px
+    margin-top: 491px;
 }
 
 #gato{
@@ -78,9 +82,9 @@
 }
 
 #tarjeta{
-    position: absolute;
-    width: 34%;
-    height: 45%;
+    position: relative;
+    width: 70%;
+    height: 60%;
     margin-left: 9%;
     margin-top: 25%;
     text-align:center;
@@ -298,4 +302,13 @@
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.fondo {
+    background-color: #FFFFFF;
 }

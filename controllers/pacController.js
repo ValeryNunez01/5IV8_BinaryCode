@@ -2,6 +2,7 @@ const { query } = require('express');
 const con = require('../config/conexion');
 const paciente = require('../model/paciente');
 const usuario = require("../model/usuario");
+const cita = require('../model/cita');
 const session = require('express-session');
 
 module.exports = {
@@ -59,12 +60,21 @@ module.exports = {
         }else{
             const MUsuario = req.session.MUsuario;
             if(MUsuario.TipoUsu == 'p'){
-                res.render('pantallaInicialP',{
-                    MUsuario
+                cita.cargarPac(con,MUsuario.IdTip, function (err, data) {
+                    const Citas = data;
+                    res.render('pantallaInicialP',{
+                        MUsuario,
+                        Citas
+                    });
                 });
             }else {
-                res.render('pantallaInicialM',{
-                    MUsuario
+                cita.cargarMed(con,MUsuario.IdTip, function (err, data) {
+                    const Citas = data;
+                    console.log(data);
+                    res.render('pantallaInicialM',{
+                        MUsuario,
+                        Citas
+                    });
                 });
             }
         }
@@ -75,6 +85,55 @@ module.exports = {
             res.redirect('/isPaciente');
         }else{
             res.render('registrarCita');
+        }
+    },
+
+    seleccionarMedico:function (req, res, next) {
+        if(req.session.Selectos == undefined) {
+            res.redirect('/registrarCitaV');
+        }else {
+            const Medicos = req.session.Selectos;
+            res.render('buscarMedico', {
+                Medicos
+            });
+        }
+    },
+
+    cancelarCit:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else{
+            delete req.session.FechaCit;
+            delete req.session.HoraCit;
+            delete req.session.Selectos;
+            res.redirect('/pantallaInicial');
+        }
+    },
+
+    guardarCita:function (req, res, next) {
+        if(req.session.Selectos == undefined) {
+            res.redirect('/registrarCitaV');
+        }else {
+            cita.crearCit(con,req.session.HoraCit,req.session.FechaCit,req.body.CedulaMed, req.session.MUsuario.IdTip, function (err) {
+                if(!err) {
+                    delete req.session.FechaCit;
+                    delete req.session.HoraCit;
+                    delete req.session.Selectos;
+                    res.redirect('/pantallaInicial');
+                }
+            });
+        }
+    },
+    cancelarCita:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else{
+            console.log(req.body.CodCit);
+            cita.cancelarCit(con, req.body.CodCit, function (err) {
+                if(!err){
+                    res.redirect('/pantallaInicial');
+                }
+            });
         }
     }
 }

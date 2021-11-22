@@ -29,4 +29,12 @@ router.get('/registrarCitaV', pacController.registrarCitaV);
 
 router.post('/buscarMedico', medController.buscarMedico);
 
+router.get('/seleccionarMedico', pacController.seleccionarMedico);
+
+router.get('/cancelarCit', pacController.cancelarCit);
+
+router.post('/guardarCita', pacController.guardarCita);
+
+router.post('/cancelarCita', pacController.cancelarCita);
+
 module.exports = router;

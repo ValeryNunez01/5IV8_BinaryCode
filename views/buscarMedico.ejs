@@ -25,13 +25,20 @@
     <div id="capa"></div>
 
     <div id="tarjeta">
-        <div id="mini-tarjeta">
-            <div id="foto-medico"></div>
-            <input id="nombre-medico" type="text" value="Médico Alexander">
-            <input type="button" value="Seleccionar" id="boton_seleccionar">
+        <% for(let i=0;i<Medicos.length;i+=1) {%>
+        <div id="mini-tarjeta"> 
+            <form action="/guardarCita" method="post">
+                <div id="foto-medico"></div>
+                <input id="nombre-medico" type="text" value="<%= Medicos[i].NombresMed %>">
+                <input name="CedulaMed" type="hidden" value="<%= Medicos[i].CedulaMed %> ">
+                <button type="submit" id="boton_seleccionar">Seleccionar</button>
+            </form>
         </div>
-        <input type="button" value="Registar" id="boton_registrar">
+        <% } %>
     </div>
+    <form action="/cancelarCit" method="get">
+        <button type="submit" id="boton_registrar">Cancelar</button>
+    </form>
     
 </body>
 </html>

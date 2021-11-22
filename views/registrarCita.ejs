@@ -27,19 +27,24 @@
             <p><input name="FechaCit" type="date" class="campos" id="fecha" placeholder="Fecha"></p>
             <p>
                 <select name="HoraCit" class="campos" id="hora">
-                    <% for(let i=6;i<=21;i += 1) {%> 
-                        <option value="<%= i %>:00"><%= i %>:00</option>
-                        <option value="<%= i %>:30"><%= i %>:30</option>
+                    <% for(let i=6;i<=21;i += 1) {%>
+                        <% if(i < 10) {%> 
+                        <option value="0<%= i %>:00:00"><%= i %>:00</option>
+                        <option value="0<%= i %>:30:00"><%= i %>:30</option>
+                        <% }else{ %>
+                        <option value="<%= i %>:00:00"><%= i %>:00</option>
+                        <option value="<%= i %>:30:00"><%= i %>:30</option>
+                        <% } %> 
                     <% } %> 
                 </select>
             </p>
             <select name="SexoMed" id="selector" class="campos">
-                <option>Femenino</option>
-                <option>Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
             </select>
 
             <a id="regresar-de-registrar" href="/pantallaInicial">Cancelar</a>
-            <button type="submit"><a id="busqueda">Buscar</a></button>
+            <button type="submit" id="busqueda">Buscar</button>
         </form>
     </div>
 </body>

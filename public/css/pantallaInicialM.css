@@ -13,6 +13,10 @@
     background: #FFF8F9;
 }
 
+body {
+    background-color: #FFF8F9;
+}
+
 #ondas{
     position: absolute;
     width: 100%;
@@ -78,9 +82,9 @@
 }
 
 #tarjeta{
-    position: absolute;
-    width: 34%;
-    height: 45%;
+    position: relative;
+    width: 70%;
+    height: 60%;
     margin-left: 9%;
     margin-top: 25%;
     text-align:center;
@@ -325,3 +329,11 @@
     margin-bottom: 5%;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.fondo {
+    background-color: #FFFFFF;
+}
