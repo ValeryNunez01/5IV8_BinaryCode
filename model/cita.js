@@ -15,5 +15,8 @@ module.exports = {
     },
     cancelarCit:function (conexion, CodCit, funcion) {
         conexion.query("DELETE FROM MCita WHERE CodCit = ?", [CodCit], funcion);
+    },
+    cargarCit:function (conexion, CodCit, funcion) {
+        conexion.query("SELECT * from mcita INNER JOIN mpaciente ON mcita.IdPac = mpaciente.IdPac WHERE CodCit = ?", [CodCit], funcion);
     }
 }

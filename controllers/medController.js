@@ -2,6 +2,7 @@ const con = require('../config/conexion');
 const session = require('express-session');
 const medico = require('../model/medico');
 const cita = require('../model/cita');
+const receta = require('../model/receta');
 const { disable } = require('../app');
 
 module.exports = {
@@ -88,6 +89,60 @@ module.exports = {
                             res.redirect('/registrarCitaV')
                         }
                     });
+                }
+            });
+        }
+    },
+    editarReceta:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else {
+            cita.cargarCit(con, req.body.CodCit, function (err, data) {
+                const dataPac = data;
+                const codCit = req.body.CodCit;
+                let modo = 'g';
+                receta.buscarReceta(con, codCit, function (err, dato) {
+                    if(dato.length == 0) {
+                        modo = 'g';
+                        res.render('editarReceta', {
+                            dataPac,
+                            codCit,
+                            modo
+                        });
+                    }else {
+                        const existentes = dato;
+                        modo = 'a';
+                        res.render('editarReceta', {
+                            dataPac,
+                            codCit,
+                            modo,
+                            existentes
+                        });
+                    }
+                });
+            });
+        }
+    },
+    guardarReceta:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else {
+            console.log(req.body);
+            receta.guardarReceta(con,req.body.CodCit,req.body.NombreCom,req.body.TallaPac,req.body.PesoPac,req.body.EdadPac,req.body.AnotaCit, function (err, data) {
+                if(!err){
+                    res.redirect('/pantallaInicial');
+                }
+            });
+        }
+    },
+    actualizarReceta:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else {
+            console.log(req.body);
+            receta.actualizarReceta(con,req.body.CodCit,req.body.NombreCom,req.body.TallaPac,req.body.PesoPac,req.body.EdadPac,req.body.AnotaCit,function (err, data) {
+                if(!err){
+                    res.redirect('/pantallaInicial');
                 }
             });
         }

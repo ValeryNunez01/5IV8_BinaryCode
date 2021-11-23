@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
-
 var indexRouter = require('./routes/index');
+const SocketIO = require('socket.io');
 
 var app = express();
 
@@ -46,6 +46,11 @@ app.use(function(err, req, res, next) {
 //Iniciar el servidor
 const server = app.listen(app.get('port'), () => {
   console.log('Server on port', app.get('port'));
+});
+
+const io = SocketIO(server);
+io.on('connection', (socket) => {
+  console.log('nueva coneccion', socket.id);
 });
 
 module.exports = app;

@@ -37,4 +37,12 @@ router.post('/guardarCita', pacController.guardarCita);
 
 router.post('/cancelarCita', pacController.cancelarCita);
 
+router.post('/visualizarReceta', pacController.visualizarReceta);
+
+router.post('/editarReceta', medController.editarReceta);
+
+router.post('/guardarReceta', medController.guardarReceta);
+
+router.post('/actualizarReceta', medController.actualizarReceta);
+
 module.exports = router;

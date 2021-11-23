@@ -44,7 +44,10 @@
             <div class="dropdown">
                 <button class="btn btn-secondary fas fa-ellipsis-v" type="button" id="menu-2" data-bs-toggle="dropdown"></button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="visualizarReceta.html">Receta médica</a></li>
+                    <form action="/visualizarReceta" method="post" class="fondo">
+                        <input name="CodCit" type="hidden" value="<%= Citas[i].CodCit %>">
+                        <li><a class="dropdown-item"><button type="submit">Receta médica</button></a></li>
+                    </form>
                 </ul>
             </div>
             <div id="foto-medico"></div>

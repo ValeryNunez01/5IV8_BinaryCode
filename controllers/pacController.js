@@ -3,6 +3,7 @@ const con = require('../config/conexion');
 const paciente = require('../model/paciente');
 const usuario = require("../model/usuario");
 const cita = require('../model/cita');
+const receta = require('../model/receta');
 const session = require('express-session');
 
 module.exports = {
@@ -70,7 +71,6 @@ module.exports = {
             }else {
                 cita.cargarMed(con,MUsuario.IdTip, function (err, data) {
                     const Citas = data;
-                    console.log(data);
                     res.render('pantallaInicialM',{
                         MUsuario,
                         Citas
@@ -132,6 +132,23 @@ module.exports = {
             cita.cancelarCit(con, req.body.CodCit, function (err) {
                 if(!err){
                     res.redirect('/pantallaInicial');
+                }
+            });
+        }
+    },
+    visualizarReceta:function (req, res, next) {
+        if(req.session.MUsuario == undefined){
+            res.redirect('/isPaciente');
+        }else{
+            console.log(req.body.CodCit);
+            receta.buscarReceta(con, req.body.CodCit, function (err, data) {
+                if(data.length == 0) {
+                    res.redirect('/pantallaInicial');
+                }else {
+                    const Datos = data;
+                    res.render('visualizarReceta',{
+                        Datos
+                    });
                 }
             });
         }

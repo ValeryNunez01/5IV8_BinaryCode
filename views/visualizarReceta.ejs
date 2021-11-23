@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="fondo">
+        <% console.log(Datos); %> 
         <svg width="100%" viewBox="0 0 1151 699" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M236.5 473.5C105.3 474.7 47.6667 547.333 0.5 590V698.5H357.5H1150L1150.5 74.5V-0.5C1128.67 17.5 1116.7 -6.71215 1054 60.5C991.5 127.5 1048 221.5 852 248C704.157 267.989 645.292 395.932 571.5 448C464.5 523.5 400.5 472 236.5 473.5Z" fill="url(#paint0_linear_90:184)"/>
             <defs>
@@ -22,12 +23,12 @@
     </div>
     <div id="tarjeta">
         <p id="titulo">RECETA MÉDICA</p>
-        <input id="campo-nombre" placeholder="Nombre completo">
-        <p><input id="campo-talla" placeholder="Talla"></p>
-        <p><input id="campo-peso" placeholder="Peso"></p>
-        <p><input id="campo-edad" placeholder="Edad"></p>
-        <textarea id="campo-indicaciones"placeholder="..."></textarea>
-        <a id="regresar-de-receta" href="pantallaInicialP.html">Regresar</a>
+        <input id="campo-nombre" placeholder="Nombre completo" value="<%= Datos[0].NombreCom %> ">
+        <p><input id="campo-talla" placeholder="Talla" value="<%= Datos[0].TallaPac %> "></p>
+        <p><input id="campo-peso" placeholder="Peso" value="<%= Datos[0].PesoPac %> "></p>
+        <p><input id="campo-edad" placeholder="Edad" value="<%= Datos[0].EdadPac %> "></p>
+        <textarea id="campo-indicaciones"placeholder="..."><%= Datos[0].AnotaCit %></textarea>
+        <a id="regresar-de-receta" href="/pantallaInicial">Regresar</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
